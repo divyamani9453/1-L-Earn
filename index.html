@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07162c">
+  <title>L-Earn | AI • Skills • Opportunities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#home" class="brand" data-page="home">
+      <span class="brand-icon">✣</span>
+      <span>L-Earn<small>AI • Skills • Opportunities</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="workers">Workers</button>
+      <button class="nav-link" data-page="ai">AI Studio</button>
+      <button class="nav-link" data-page="market">Market</button>
+      <button class="nav-link" data-page="profile">Profile</button>
+    </nav>
+    <div class="nav-auth">
+      <button class="login-btn" data-page="login">Login</button>
+      <button class="signup-btn" data-page="login" data-auth-mode="signup">Sign Up</button>
+    </div>
+
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="welcome">
+        <div>
+          <span class="eyebrow">YOUR CREATIVE JOURNEY STARTS HERE</span>
+          <h1>Hello, Khushi <span class="wave">👋</span></h1>
+          <p class="muted">Everything you need to create and grow, in one place.</p>
+        </div>
+        <span class="welcome-mark">✦</span>
+      </div>
+
+      <div class="hero">
+        <div class="hero-content">
+          <span class="pill">✦ YOUR CREATIVE WORKSPACE</span>
+          <h2>Your skills.<br>Your next opportunity.</h2>
+          <p>Create with AI, find skilled people and showcase digital products.</p>
+          <button class="light-btn" data-page="workers">Explore opportunities <span>→</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit"></div>
+          <div class="art-card card-one">✦<small>CREATE</small></div>
+          <div class="art-card card-two">⌘<small>BUILD</small></div>
+          <div class="art-card card-three">↗️<small>GROW</small></div>
+          <span class="art-spark">✧</span>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">GET STARTED</span><h2>Quick access</h2></div>
+        <span class="muted">Your creative toolkit</span>
+      </div>
+
+      <div class="quick-grid">
+        <button class="quick-card" data-page="workers">
+          <span class="quick-icon blue">⌕</span>
+          <span class="quick-info"><strong>Find skilled workers</strong><small>Search talent by skills</small></span><span class="arrow">↗️</span>
+        </button>
+        <button class="quick-card" data-page="ai">
+          <span class="quick-icon purple">✦</span>
+          <span class="quick-info"><strong>AI Studio</strong><small>Create ideas, content and code</small></span><span class="arrow">↗️</span>
+        </button>
+        <button class="quick-card" data-page="market">
+          <span class="quick-icon orange">▤</span>
+          <span class="quick-info"><strong>Marketplace</strong><small>Discover or list digital products</small></span><span class="arrow">↗️</span>
+        </button>
+        <button class="quick-card" data-page="profile">
+          <span class="quick-icon green">♙</span>
+          <span class="quick-info"><strong>Profile</strong><small>Manage account and projects</small></span><span class="arrow">↗️</span>
+        </button>
+
+        </div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE TALENT</span><h2>Featured workers</h2></div>
+        <button class="text-btn" data-page="workers">View all →</button>
+      </div>
+      <div class="card-grid" id="featuredWorkers"></div>
+    </section>
+
+    <section id="workers" class="page">
+      <div class="page-heading">
+         <div><span class="eyebrow">FIND YOUR NEXT COLLABORATOR</span><h1>Find skilled workers</h1>
+        <p class="muted">Discover talented people ready to bring your ideas to life.</p></div>
+        <span class="heading-symbol">⌕</span>
+      </div>
+      <div class="search-box"><span>⌕</span><input id="workerSearch" type="search" placeholder="Search skills, names or services..."></div>
+      <div class="filters">
+        <button class="filter active" data-worker-filter="All">All workers</button>
+        <button class="filter" data-worker-filter="Developer">Developer</button>
+        <button class="filter" data-worker-filter="Designer">Designer</button>
+        <button class="filter" data-worker-filter="Video">Video editor</button>
+      </div>
+      <div class="results-heading"><h2>Available talent</h2><span id="workerCount" class="muted"></span></div>
+      <div id="workerList" class="card-grid"></div>
+    </section>
+
+    <section id="ai" class="page">
+      <div class="page-heading">
+        <div><span class="eyebrow">YOUR IDEAS, AMPLIFIED</span><h1>AI Studio</h1>
+        <p class="muted">Turn your ideas into practical drafts, content and code.</p></div>
+        <span class="heading-symbol">✦</span>
+      </div>
+      <div class="studio-layout">
+        <div class="panel">
+          <span class="eyebrow">CREATE SOMETHING NEW</span>
+          <h2>What would you like to create?</h2>
+          <label for="prompt">Describe your idea</label>
+          <textarea id="prompt" placeholder="e.g. Create a modern portfolio website for a web developer..."></textarea>
+          <label for="technology">Choose technology</label>
+          <select id="technology">
+            <option>HTML / CSS / JavaScript</option>
+            <option>Python</option>
+            <option>React</option>
+            <option>Flutter / Dart</option>
+            <option>Java</option>
+          </select>
+          <label for="creationType">What are you creating?</label>
+          <select id="creationType">
+            <option>Website</option><option>App</option><option>Code</option><option>Content</option><option>Ideas</option>
+          </select>
+          <button id="generateBtn" class="primary-btn">✦ Generate <span>→</span></button>
+          <p class="note">Demo mode. Real AI output requires a connected AI service.</p>
+        </div>
+        <aside class="panel studio-aside">
+          <span class="quick-icon purple">✧</span>
+          <h2>Your creative space</h2>
+          <p class="muted">Start with a clear prompt. Describe your goal, the audience and the features you need.</p>
+          <div class="tip"><strong>✦ Prompt tip</strong><p>Be specific about what you want to build and which technology you want to use.</p></div>
+          <div class="result" id="aiResult" hidden aria-live="polite"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="market" class="page">
+      <div class="page-heading">
+        <div><span class="eyebrow">DISCOVER • CREATE • SELL</span><h1>Digital marketplace</h1>
+               <p class="muted">Discover ready-made websites, apps and digital products.</p></div>
+        <span class="heading-symbol">▤</span>
+      </div>
+      <div class="market-banner">
+        <div><span class="pill">FOR CREATORS</span><h2>Have a product to sell?</h2>
+        <p>Showcase your website, app or digital product to buyers.</p></div>
+        <button class="light-btn" data-action="list-product">＋ List product</button>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">CURATED FOR YOU</span><h2>Explore products</h2></div></div>
+      <div class="filters">
+        <button class="filter active" data-market-filter="All">All products</button>
+        <button class="filter" data-market-filter="Website">Website</button>
+        <button class="filter" data-market-filter="App">App</button>
+        <button class="filter" data-market-filter="Template">Template</button>
+      </div>
+      <div id="productList" class="card-grid"></div>
+    </section>
+
+    <section id="profile" class="page">
+      <div class="page-heading">
+        <div><span class="eyebrow">YOUR PERSONAL SPACE</span><h1>Profile &amp; settings</h1>
+        <p class="muted">Manage your account, projects and preferences.</p></div>
+        <span class="heading-symbol">♙</span>
+      </div>
+      <div class="profile-layout">
+        <div>
+          <div class="panel profile-card">
+            <div class="avatar">D</div>
+            <div class="profile-main"><h2 id="profileName">Daz</h2><p class="muted">Demo profile · backend not connected</p></div>
+            <button class="secondary-btn" data-action="edit">Edit profile</button>
+          </div>
+          <div class="section-heading"><div><span class="eyebrow">YOUR WORK</span><h2>Account</h2></div></div>
+          <div class="settings-list">
+            <button data-action="edit"><span class="setting-icon">♙</span><span><strong>Edit profile</strong><small>Update your personal details</small></span><span class="arrow">→</span></button>
+            <button data-action="projects"><span class="setting-icon">▣</span><span><strong>My projects</strong><small>Manage your creative work</small></span><span class="arrow">→</span></button>
+            <button data-action="notifications"><span class="setting-icon">♧</span><span><strong>Notifications</strong><small>Stay updated</small></span><span class="arrow">→</span></button>
+            <button data-action="Received Hiring Requests"><span class=Received Hiring Requests>♧</span><span><strong>Received Hiring Requests</strong><small>See New Hiring</small></span><span class="arrow">→</span></button>
+            <button data-action="privacy"><span class="setting-icon">♢</span><span><strong>Privacy &amp; security</strong><small>Manage your account security</small></span><span class="arrow">→</span></button>
+            <button data-action="help"><span class="setting-icon">ⓘ</span><span><strong>Help &amp; support</strong><small>Get assistance</small></span><span class="arrow">→</span></button>
+            <button type="button" id="logoutBtn" data-action="logout"><span class="setting-icon">↗️</span><span><strong>Log Out</strong></span><span class="arrow">→</span></button>
+
+          </div>
+        </div>
+        <aside class="panel wallet">
+          <span class="eyebrow">WALLET &amp; PAYMENTS</span><h2>Sample balance</h2>
+           <div class="wallet-amount">₹0.00</div>
+          <p class="muted">Demo balance only. Real payments are not enabled.</p>
+          <div class="wallet-line"><span>Available balance</span><strong>₹0.00</strong></div>
+        </aside>
+      </div>
+      <div id="profileDetails" class="panel details-panel" hidden></div>
+    </section>
+
+    
+<section id="auth" class="page">
+  <div class="auth-layout">
+
+    <!-- Left welcome section -->
+    <div class="auth-intro">
+      <span class="brand-icon">✣</span>
+      <span class="eyebrow">WELCOME TO L-EARN</span>
+
+      <h1>Your next chapter<br />starts here.</h1>
+
+      <p>Connect your skills with opportunities.</p>
+    </div>
+
+    <!-- Right authentication card -->
+    <div class="panel auth-panel">
+      <h2 id="authTitle">Welcome back!</h2>
+      <p class="muted" id="authSubtitle">
+        Log in to continue to L-Earn.
+      </p>
+
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-auth="login">
+          Login
+        </button>
+        <button type="button" class="auth-tab" data-auth="signup">
+          Sign up
+        </button>
+      </div>
+
+      <form id="authForm">
+        <label for="fullName" id="fullNameLabel" hidden>
+          Full name
+        </label>
+        <input
+          id="fullName"
+          type="text"
+          placeholder="Your full name"
+          autocomplete="name"
+          hidden
+        />
+
+        <label for="accountType" id="accountTypeLabel" hidden>
+          Account type
+        </label>
+        <select id="accountType" hidden>
+          <option value="worker">Worker</option>
+          <option value="client">Client</option>
+        </select>
+
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        />
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          minlength="8"
+          placeholder="At least 8 characters"
+          autocomplete="current-password"
+          required
+        />
+
+        <button type="submit" class="primary-btn" id="authSubmit">
+          Login →
+        </button>
+      </form>
+
+      <p class="note" id="authMessage">
+        Demo interface only; no account will be created.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+    
+
+  </main>
+
+  <footer class="footer"><span>✣ L-Earn</span><span>AI • Skills • Opportunities</span><span>© 2026 L-Earn · Demo website</span></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
